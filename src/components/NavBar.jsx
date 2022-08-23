@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
-function NavBar() {
-  const [menuToggle, setMenuToggle] = useState(false);
+function NavBar({ menuToggle, setMenuToggle }) {
   return (
-    <div className='flex justify-between items-center p-2 '>
+    <div className=' flex justify-between items-center p-2 '>
       {/* Logo */}
       <div className='text-xl md:text-2xl group'>
         <h2
@@ -52,7 +50,7 @@ function NavBar() {
       {menuToggle && (
         <div
           className='
-       absolute flex items-center justify-center h-screen w-screen top-0 left-0 bg-black z-10'
+       absolute flex items-center justify-center h-screen top-0 left-0 right-0 bottom-0 bg-black z-10'
         >
           <div>
             <div className='flex flex-col justify-center items-center space-y-5 text-white '>
