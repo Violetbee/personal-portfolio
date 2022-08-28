@@ -3,17 +3,12 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ContextProvider from './contexts/gitContext';
-import { QueryClient, QueryClientProvider } from 'react-query';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const queryClient = new QueryClient();
-
 root.render(
   <Router>
-    <QueryClientProvider client={queryClient}>
-      <ContextProvider>
-        <App />
-      </ContextProvider>
-    </QueryClientProvider>
+    <ContextProvider>
+      <App />
+    </ContextProvider>
   </Router>
 );
