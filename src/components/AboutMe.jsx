@@ -6,7 +6,7 @@ import TypeMe from 'react-typeme';
 
 function AboutMe() {
   return (
-    <div className='text-white font-mono flex flex-col gap-20'>
+    <div className='text-white font-mono flex flex-col gap-28'>
       <div className='flex items-center gap-2'>
         <ShakeHand />
         <p className='text-2xl md:text-3xl font-bold'>

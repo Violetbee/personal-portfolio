@@ -1,17 +1,18 @@
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { ReactComponent as BuyMeaCoffee } from '../svg/buymeacoffee.svg';
 
 function NavBar({ menuToggle, setMenuToggle }) {
   return (
     <div className=' flex justify-between items-center p-2 '>
       {/* Logo */}
-      <div className='text-xl sm:text-2xl lg:text-3xl group'>
+      <Link to='/' className='text-xl sm:text-2xl lg:text-3xl group'>
         <h2 style={{ fontFamily: 'monospace' }} className='cursor-pointer '>
           <span className='relative text-white  tracking-widest'>
             Çağlar Karahüseyin
           </span>
         </h2>
-      </div>
+      </Link>
       {/* Sağ Menü */}
       <div>
         <div
@@ -19,23 +20,23 @@ function NavBar({ menuToggle, setMenuToggle }) {
           className='text-white hidden md:flex md:flex-row justify-center items-center md:space-x-5 z-20'
         >
           <Link to='/'>
-            <button className='group flex'>
-              /home<div className='subline group-hover:opacity-100'></div>
-            </button>
+            <button>/home</button>
           </Link>
-          <span className='opacity-50'>·</span>
+          <span className='opacity-30'>·</span>
           <Link to='/projects'>
-            <button className='group'>
-              /projects
-              <div className='subline group-hover:opacity-100'></div>
-            </button>
+            <button>/projects</button>
           </Link>
-          <span className='opacity-50'>·</span>
-          <Link to='/contact'>
-            <button className='group'>
-              /contact<div className='subline group-hover:opacity-100'></div>
+          <span className='opacity-30'>·</span>
+          <a
+            href='https://www.buymeacoffee.com/caglark'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <button className='flex'>
+              /buymeacoffee
+              <BuyMeaCoffee style={{ width: '23px', height: '23px' }} />
             </button>
-          </Link>
+          </a>
         </div>
         <div className='md:hidden text-zinc-300'>
           <AiOutlineMenu

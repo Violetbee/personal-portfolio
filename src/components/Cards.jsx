@@ -2,16 +2,16 @@ function Cards({ id, url, name }) {
   return (
     <div
       key={id}
-      className='flex md:flex-col bg-slate-800 rounded-md shadow-md shadow-slate-900 hover:scale-105 duration-300'
+      className='flex lg:flex-col gap-1 border-[5px] rounded-md hover:-translate-y-1 duration-300'
     >
       <img
-        className='rounded-l-md md:rounded-l-none md:rounded-t-md object-cover w-24 sm:w-20 md:28 md:w-full md:h-32'
+        className='object-cover w-28 xs:w-36 sm:w-44 md:w-28 lg:h-36 lg:w-full'
         src={url}
         alt='anime'
       />
-      <div className='flex flex-col py-2 px-2 md:py-2 md:px-2'>
-        <h1 className='text-xl'>{name}</h1>
-        <p className='text-gray-400'>
+      <div className='flex flex-col py-2 px-2 gap-2 text-white font-mono'>
+        <h1 className='text-2xl font-bold'>{name}</h1>
+        <p className='text-lg'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla,
           consequatur.
         </p>
