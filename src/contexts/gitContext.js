@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext } from 'react';
 import { Octokit } from 'octokit';
 import { useQuery } from '@tanstack/react-query';
 
@@ -8,22 +8,27 @@ const ContextProvider = ({ children }) => {
   const octokit = new Octokit({
     auth: process.env.REACT_APP_GITHUB_TOKEN,
   });
-  const { isLoading, isFetching, error, data, status } = useQuery();
-
-  const [gitDatas, setGitDatas] = useState({});
-  const [gitRepos, setGitRepos] = useState([]);
 
   const fetchGitDatas = async () => {
-    const { data: gitDatas } = await octokit.request('/user');
-    setGitDatas(gitDatas);
+    const { data } = await octokit.request('/user');
+    return data;
   };
 
   const fetchGitRepos = async () => {
-    const { data: gitRepos } = await octokit.request('/user/repos');
-    setGitRepos(gitRepos);
+    const { data } = await octokit.request('/user/repos');
+    return data;
   };
 
-  const values = { gitDatas, gitRepos, fetchGitDatas, fetchGitRepos };
+  const { data: gitInfo, isLoading: isLoadingData } = useQuery(
+    ['gitData'],
+    fetchGitDatas
+  );
+  const { data: gitRepos, isLoading: isLoadingRepos } = useQuery(
+    ['gitRepos'],
+    fetchGitDatas
+  );
+
+  const values = { gitInfo, gitRepos, isLoadingData, isLoadingRepos };
 
   return <Context.Provider value={values}>{children}</Context.Provider>;
 };
