@@ -1,8 +1,7 @@
-import ShakeHand from '../svg/shake-hand.svg';
-
-import GitHubSVG from '../svg/github.svg';
-import LinkedIn from '../svg/linkedin.svg';
-import Instagram from '../svg/instagram.svg';
+import { ReactComponent as ShakeHand } from '../svg/shake-hand.svg';
+import { ReactComponent as GitHubSVG } from '../svg/github.svg';
+import { ReactComponent as LinkedIn } from '../svg/linkedin.svg';
+import { ReactComponent as Instagram } from '../svg/instagram.svg';
 import TypeMe from 'react-typeme';
 
 function AboutMe() {
