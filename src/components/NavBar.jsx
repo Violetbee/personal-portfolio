@@ -5,43 +5,37 @@ function NavBar({ menuToggle, setMenuToggle }) {
   return (
     <div className=' flex justify-between items-center p-2 '>
       {/* Logo */}
-      <div className='text-xl md:text-2xl group'>
-        <h2
-          style={{ fontFamily: 'Poppins' }}
-          className='cursor-pointer before:block before:absolute before:-inset-[6px] before:skew-y-[1.1deg] before:bg-gray-900 relative inline-block shadow-md shadow-yellow-400 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:shadow-lg duration-300'
-        >
-          <span className='relative text-white font-bold'>
+      <div className='text-xl sm:text-2xl lg:text-3xl group'>
+        <h2 style={{ fontFamily: 'monospace' }} className='cursor-pointer '>
+          <span className='relative text-white  tracking-widest'>
             Çağlar Karahüseyin
           </span>
         </h2>
       </div>
       {/* Sağ Menü */}
       <div>
-        <div>
-          <div
-            style={{ fontFamily: 'Poppins' }}
-            className='text-indigo-200 hidden md:flex md:flex-row justify-center items-center md:space-x-3 z-20'
-          >
-            <Link to='/'>
-              <button className='group'>
-                Anasayfa
-                <div className='subline  group-hover:opacity-100'></div>
-              </button>
-            </Link>
-            <span className='opacity-50'>·</span>
-            <Link to='/projects'>
-              <button className='group'>
-                Çalışmalarım
-                <div className='subline  group-hover:opacity-100'></div>
-              </button>
-            </Link>
-            <span className='opacity-50'>·</span>
-            <Link to='/contact'>
-              <button className='group'>
-                İletişim<div className='subline  group-hover:opacity-100'></div>
-              </button>
-            </Link>
-          </div>
+        <div
+          style={{ fontFamily: 'Poppins' }}
+          className='text-white hidden md:flex md:flex-row justify-center items-center md:space-x-5 z-20'
+        >
+          <Link to='/'>
+            <button className='group flex'>
+              /home<div className='subline group-hover:opacity-100'></div>
+            </button>
+          </Link>
+          <span className='opacity-50'>·</span>
+          <Link to='/projects'>
+            <button className='group'>
+              /projects
+              <div className='subline group-hover:opacity-100'></div>
+            </button>
+          </Link>
+          <span className='opacity-50'>·</span>
+          <Link to='/contact'>
+            <button className='group'>
+              /contact<div className='subline group-hover:opacity-100'></div>
+            </button>
+          </Link>
         </div>
         <div className='md:hidden text-zinc-300'>
           <AiOutlineMenu

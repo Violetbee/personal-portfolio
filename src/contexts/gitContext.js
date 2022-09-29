@@ -14,10 +14,10 @@ const ContextProvider = ({ children }) => {
     return data;
   };
 
-  const fetchGitRepos = async () => {
-    const { data } = await octokit.request('/user/repos');
-    return data;
-  };
+  // const fetchGitRepos = async () => {
+  //   const { data } = await octokit.request('/user/repos');
+  //   return data;
+  // };
 
   const { data: gitInfo, isLoading: isLoadingData } = useQuery(
     ['gitData'],
