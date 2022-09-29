@@ -6,6 +6,12 @@
   .subline {
     @apply h-[2px] rounded w-3/4 bg-slate-400 opacity-0 m-auto transition-all duration-300;
   }
+  .midBoxContainer {
+    @apply flex justify-center bg-slate-300 hover:bg-slate-700 hover:text-slate-300 duration-200 rounded-md p-2;
+  }
+  .midBoxInside {
+    @apply flex flex-col xl:flex-row items-center justify-center space-x-0 lg:space-x-2;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');

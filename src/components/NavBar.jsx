@@ -1,4 +1,5 @@
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 function NavBar({ menuToggle, setMenuToggle }) {
   return (
@@ -21,19 +22,25 @@ function NavBar({ menuToggle, setMenuToggle }) {
             style={{ fontFamily: 'Poppins' }}
             className='text-indigo-200 hidden md:flex md:flex-row justify-center items-center md:space-x-3 z-20'
           >
-            <button className='group'>
-              Anasayfa
-              <div className='subline  group-hover:opacity-100'></div>
-            </button>
+            <Link to='/'>
+              <button className='group'>
+                Anasayfa
+                <div className='subline  group-hover:opacity-100'></div>
+              </button>
+            </Link>
             <span className='opacity-50'>·</span>
-            <button className='group'>
-              Çalışmalarım
-              <div className='subline  group-hover:opacity-100'></div>
-            </button>
+            <Link to='/projects'>
+              <button className='group'>
+                Çalışmalarım
+                <div className='subline  group-hover:opacity-100'></div>
+              </button>
+            </Link>
             <span className='opacity-50'>·</span>
-            <button className='group'>
-              İletişim<div className='subline  group-hover:opacity-100'></div>
-            </button>
+            <Link to='/contact'>
+              <button className='group'>
+                İletişim<div className='subline  group-hover:opacity-100'></div>
+              </button>
+            </Link>
           </div>
         </div>
         <div className='md:hidden text-zinc-300'>
@@ -54,17 +61,39 @@ function NavBar({ menuToggle, setMenuToggle }) {
         >
           <div>
             <div className='flex flex-col justify-center items-center space-y-5 text-white '>
-              <button className='group'>
-                Anasayfa
-                <div className='subline  group-hover:opacity-100'></div>
-              </button>
-              <button className='group'>
-                Çalışmalarım
-                <div className='subline  group-hover:opacity-100'></div>
-              </button>
-              <button className='group'>
-                İletişim<div className='subline  group-hover:opacity-100'></div>
-              </button>
+              <Link
+                to='/'
+                onClick={() => {
+                  setMenuToggle(!menuToggle);
+                }}
+              >
+                <button className='group'>
+                  Anasayfa
+                  <div className='subline  group-hover:opacity-100'></div>
+                </button>
+              </Link>
+              <Link
+                to='/projects'
+                onClick={() => {
+                  setMenuToggle(!menuToggle);
+                }}
+              >
+                <button className='group'>
+                  Çalışmalarım
+                  <div className='subline  group-hover:opacity-100'></div>
+                </button>
+              </Link>
+              <Link
+                to='/contact'
+                onClick={() => {
+                  setMenuToggle(!menuToggle);
+                }}
+              >
+                <button className='group'>
+                  İletişim
+                  <div className='subline  group-hover:opacity-100'></div>
+                </button>
+              </Link>
             </div>
           </div>
           <div className='text-white absolute top-10 right-10 cursor-pointer'>
