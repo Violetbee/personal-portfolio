@@ -12,6 +12,19 @@
   .midBoxInside {
     @apply flex flex-col xl:flex-row items-center justify-center space-x-0 lg:space-x-2;
   }
+  .paginationButtons {
+    @apply flex items-center gap-2;
+  }
+  .paginationButtons a {
+    @apply p-3 rounded-sm bg-white hover:bg-slate-300 duration-300;
+  }
+  .paginationActivated a {
+    @apply bg-slate-400 duration-300 text-white;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.paginationDisabled a {
+  display: none;
+}

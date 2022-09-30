@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as BuyMeaCoffee } from '../svg/buymeacoffee.svg';
 
 function NavBar({ menuToggle, setMenuToggle }) {
+  // Bu alandan menüyü ayarlayabilirsiniz.
+  const navItems = [
+    {
+      id: 0,
+      name: '/home',
+      route: '/',
+    },
+    {
+      id: 1,
+      name: '/projects',
+      route: '/projects',
+    },
+  ];
+
   return (
     <div className=' flex justify-between items-center p-2 '>
       {/* Logo */}
@@ -19,20 +33,22 @@ function NavBar({ menuToggle, setMenuToggle }) {
           style={{ fontFamily: 'Poppins' }}
           className='text-white hidden md:flex md:flex-row justify-center items-center md:space-x-5 z-20'
         >
-          <Link to='/'>
-            <button>/home</button>
-          </Link>
-          <span className='opacity-30'>·</span>
-          <Link to='/projects'>
-            <button>/projects</button>
-          </Link>
-          <span className='opacity-30'>·</span>
+          {navItems.map((item) => (
+            <div key={item.id} className='hover:-translate-y-1 duration-200'>
+              <Link to={item.route}>
+                <button>{item.name}</button>
+              </Link>
+              <span className='opacity-30'>·</span>
+            </div>
+          ))}
+
           <a
             href='https://www.buymeacoffee.com/caglark'
             target='_blank'
             rel='noopener noreferrer'
+            className=''
           >
-            <button className='flex'>
+            <button className='flex hover:-translate-y-1 duration-200'>
               /buymeacoffee
               <BuyMeaCoffee style={{ width: '23px', height: '23px' }} />
             </button>
@@ -56,39 +72,29 @@ function NavBar({ menuToggle, setMenuToggle }) {
         >
           <div>
             <div className='flex flex-col justify-center items-center space-y-5 text-white '>
-              <Link
-                to='/'
-                onClick={() => {
-                  setMenuToggle(!menuToggle);
-                }}
+              {navItems.map((item) => (
+                <Link
+                  key={item.id}
+                  to={item.route}
+                  onClick={() => {
+                    setMenuToggle(!menuToggle);
+                  }}
+                >
+                  <button className='hover:-translate-y-1 duration-300'>
+                    {item.name}
+                  </button>
+                </Link>
+              ))}
+              <a
+                href='https://www.buymeacoffee.com/caglark'
+                target='_blank'
+                rel='noopener noreferrer'
               >
-                <button className='group'>
-                  Anasayfa
-                  <div className='subline  group-hover:opacity-100'></div>
+                <button className='flex hover:-translate-y-1 duration-300'>
+                  /buymeacoffee
+                  <BuyMeaCoffee style={{ width: '23px', height: '23px' }} />
                 </button>
-              </Link>
-              <Link
-                to='/projects'
-                onClick={() => {
-                  setMenuToggle(!menuToggle);
-                }}
-              >
-                <button className='group'>
-                  Çalışmalarım
-                  <div className='subline  group-hover:opacity-100'></div>
-                </button>
-              </Link>
-              <Link
-                to='/contact'
-                onClick={() => {
-                  setMenuToggle(!menuToggle);
-                }}
-              >
-                <button className='group'>
-                  İletişim
-                  <div className='subline  group-hover:opacity-100'></div>
-                </button>
-              </Link>
+              </a>
             </div>
           </div>
           <div className='text-white absolute top-10 right-10 cursor-pointer'>
