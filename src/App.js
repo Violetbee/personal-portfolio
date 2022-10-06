@@ -6,8 +6,8 @@ function App() {
   const [menuToggle, setMenuToggle] = useState(false);
 
   return (
-    <div className='bg-[#293462]'>
-      <div className='flex flex-col items-center mx-auto min-h-screen md:pt-20 gap-10 w-11/12 md:w-10/12 lg:w-9/12 xl:max-w-[900px]'>
+    <div className='bg-[#06283D]'>
+      <div className='flex flex-col items-center mx-auto min-h-screen md:pt-5 lg:pt-10 gap-10 w-11/12 md:w-10/12 lg:w-9/12 xl:max-w-[900px]'>
         <div className='mt-2 w-full py-2'>
           <NavBar menuToggle={menuToggle} setMenuToggle={setMenuToggle} />
         </div>
