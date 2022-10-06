@@ -17,7 +17,7 @@ function AboutMe() {
       <div className='text-lg space-y-2 items-center gap-1'>
         <p>I like to develop applications in javascript environment.</p>
         <p>
-          Currently working on ReactJS, my main goal is to reach MERN Stack
+          Currently working on ReactJS, my main goal is to reach Full Stack
           level.
         </p>
       </div>
