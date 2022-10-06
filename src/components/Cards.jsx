@@ -7,18 +7,20 @@ function Cards({ url, name, body, gitUrl }) {
           backgroundImage: `url(${url})`,
         }}
       ></div>
-      <div className='p-4'>
+      <div className='p-3'>
         <div className='flex items-center justify-between'>
           <h1 className='text-gray-600 font-medium'>{name}</h1>
         </div>
         <p className='text-gray-400 text-sm my-1'>Jack cooper</p>
-        {body.map((item) => (
-          <span
-            className={`uppercase  text-xs ${item.color.bg} ${item.color.border} ${item.color.text} p-1 border rounded font-medium `}
-          >
-            {item.tech}
-          </span>
-        ))}
+        <div className='flex space-x-2'>
+          {body.map((item) => (
+            <span
+              className={`uppercase  text-xs ${item.color.bg} ${item.color.border} ${item.color.text} p-1 border rounded font-medium `}
+            >
+              {item.tech}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
