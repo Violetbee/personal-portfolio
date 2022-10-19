@@ -172,7 +172,9 @@ function Projects() {
     //     ></ReactPaginate>
     //   </div>
     // </div>
-    <div>This page is under construction, for now check my GitHub page.</div>
+    <div className='text-white text-xl'>
+      This page is under construction, check my GitHub repos.
+    </div>
   );
 }
 export default Projects;
