@@ -155,23 +155,24 @@ function Projects() {
   };
 
   return (
-    <div className='flex flex-col gap-10'>
-      <div className='grid gap-4 grid-cols-1 lg:grid-cols-2 '>
-        {displayProjects.reverse()}
-      </div>
-      <div className='self-center'>
-        <ReactPaginate
-          previousLabel='previous'
-          pageRangeDisplayed={1}
-          nextLabel='next'
-          pageCount={pageCount}
-          onPageChange={changePage}
-          containerClassName={'paginationButtons'}
-          activeClassName={'paginationActivated'}
-          disabledClassName={'paginationDisabled'}
-        ></ReactPaginate>
-      </div>
-    </div>
+    // <div className='flex flex-col gap-10'>
+    //   <div className='grid gap-4 grid-cols-1 lg:grid-cols-2 '>
+    //     {displayProjects.reverse()}
+    //   </div>
+    //   <div className='self-center'>
+    //     <ReactPaginate
+    //       previousLabel='previous'
+    //       pageRangeDisplayed={1}
+    //       nextLabel='next'
+    //       pageCount={pageCount}
+    //       onPageChange={changePage}
+    //       containerClassName={'paginationButtons'}
+    //       activeClassName={'paginationActivated'}
+    //       disabledClassName={'paginationDisabled'}
+    //     ></ReactPaginate>
+    //   </div>
+    // </div>
+    <div>This page is under construction, for now check my GitHub page.</div>
   );
 }
 export default Projects;
